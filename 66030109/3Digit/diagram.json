@@ -1,1 +1,68 @@
-
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -158.36, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r2", "top": 90.35, "left": 0, "attrs": { "value": "330" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 99.95, "left": 0, "attrs": { "value": "330" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 109.55,
+      "left": 0,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 119.15,
+      "left": 0,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 128.75,
+      "left": 0,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": 138.35,
+      "left": 0,
+      "attrs": { "value": "330" }
+    },
+    { "type": "wokwi-resistor", "id": "r1", "top": 80.75, "left": 0, "attrs": { "value": "330" } },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": 63.42,
+      "left": 135.24,
+      "attrs": { "digits": "3", "colon": "", "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "sevseg1:A", "r1:2", "#8f4814", [ "v-105.6", "h-105.6", "v19.2" ] ],
+    [ "sevseg1:B", "r2:2", "orange", [ "v-96", "h-134.4", "v105.6" ] ],
+    [ "sevseg1:C", "r3:2", "green", [ "v66.36", "h-134.4", "v-115.2" ] ],
+    [ "sevseg1:D", "r4:2", "gold", [ "v56.76", "h-105.6", "v-96" ] ],
+    [ "sevseg1:E", "r5:2", "blue", [ "v47.16", "h-86.4", "v-76.8" ] ],
+    [ "sevseg1:F", "r6:2", "violet", [ "v-86.4", "h-96", "v134.4" ] ],
+    [ "sevseg1:G", "r7:2", "white", [ "v37.56", "h-115.2", "v-48" ] ],
+    [ "esp:0", "r7:1", "white", [ "h38.4", "v-19.2" ] ],
+    [ "esp:4", "r6:1", "violet", [ "h28.8", "v-19.2" ] ],
+    [ "esp:16", "r5:1", "blue", [ "h19.2", "v-19.2" ] ],
+    [ "esp:17", "r4:1", "gold", [ "h9.6", "v-19.2" ] ],
+    [ "esp:19", "r1:1", "#8f4814", [ "h9.6", "v-19.2" ] ],
+    [ "esp:5", "r3:1", "green", [ "h9.6", "v-9.6" ] ],
+    [ "esp:18", "r2:1", "orange", [ "h9.6", "v-19.2" ] ],
+    [ "esp:21", "sevseg1:DIG1", "purple", [ "h134.4", "v-76.8", "h105.6" ] ],
+    [ "esp:22", "sevseg1:DIG2", "cyan", [ "h124.8", "v-86.4", "h144" ] ],
+    [ "esp:23", "sevseg1:DIG3", "limegreen", [ "h115.2", "v-86.4", "h163.2" ] ]
+  ],
+  "dependencies": {}
+}
